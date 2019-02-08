@@ -17,42 +17,55 @@
 // export default WorldMap;
 //
 
-import React, {Component} from 'react';
-import MapGL, {NavigationControl} from 'react-map-gl';
-const TOKEN = 'pk.eyJ1Ijoiam9ubmVsYmVuamFtaW4yMyIsImEiOiJjanJ3YTVmZ2IwYW5sM3lxb2ZjMXUyYzc3In0.v0hrA7wAVwvEm9kc5CKQLQ';
-const navStyle = {
-  position: 'absolute',
-  top: 0,
-  left: 0,
-  padding: '10px'
-};
 
-class Map extends Component {
-constructor(props) {
+import React from 'react'
+import ReactDOM from 'react-dom'
+import mapboxgl from 'mapbox-gl'
+
+mapboxgl.accessToken = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA';
+
+class WorldMap extends React.Component {
+
+  constructor(props: Props) {
     super(props);
     this.state = {
-      viewport: {
-        latitude: 37.785164,
-        longitude: -100,
-        zoom: 2.8,
-        bearing: 0,
-        pitch: 0,
-        width: 500,
-        height: 500,
-      }
+      lng: 5,
+      lat: 34,
+      zoom: 1.5
     };
   }
-render() {
-    const {viewport} = this.state;
-return (
-      <MapGL
-        {...viewport}
-        mapStyle="mapbox://styles/mapbox/dark-v9"
-        mapboxApiAccessToken={TOKEN}>
-        <div className="nav" style={navStyle}>
-          <NavigationControl/>
+
+  componentDidMount() {
+    const { lng, lat, zoom } = this.state;
+
+    const map = new mapboxgl.Map({
+      container: this.mapContainer,
+      style: 'mapbox://styles/mapbox/streets-v9',
+      center: [lng, lat],
+      zoom
+    });
+
+    map.on('move', () => {
+      const { lng, lat } = map.getCenter();
+
+      this.setState({
+        lng: lng.toFixed(4),
+        lat: lat.toFixed(4),
+        zoom: map.getZoom().toFixed(2)
+      });
+    });
+  }
+
+  render() {
+    const { lng, lat, zoom } = this.state;
+
+    return (
+      <div>
+        <div className="worldMap">
+          <div>{`Longitude: ${lng} Latitude: ${lat} Zoom: ${zoom}`}</div>
         </div>
-      </MapGL>
+        <div ref={el => this.mapContainer = el} className="absolute top right left bottom" />
+      </div>
     );
   }
 }

@@ -9,6 +9,7 @@ class Spy extends Component {
         <header className="Spy-header">
             <h1>"I'm the spy"</h1>
             </header>
+            <Mission />
             </div>
           )
         }

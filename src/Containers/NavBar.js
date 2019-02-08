@@ -6,6 +6,7 @@ class NavBar extends Component {
   render() {
     return (
       <div className="NavBar">
+        <nav>Navbar</nav>
         <header className="NavBar-header">
         I'm the NavBar, does this update?
         </header>

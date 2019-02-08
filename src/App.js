@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import WorldMap from './Containers/WorldMap'
 import NavBar from './Containers/NavBar'
+import { Button} from 'react-bootstrap';
 
 class App extends Component {
   constructor(){
@@ -15,9 +16,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <NavBar />
         <header className="App-header">
-          <NavBar />
           <WorldMap />
+            <p>Here is a paragraph in the App</p>
+            <Button bsStyle='success'>Hello Button</Button>
         </header>
       </div>
     );

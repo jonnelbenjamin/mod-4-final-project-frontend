@@ -13,6 +13,17 @@ class App extends Component {
       missions: []
     }
   }
+
+  componentDidMount(){
+      fetch('http://localhost:3000/locations')
+      .then(res => res.json())
+      .then(locationPin => {
+        this.setState({
+          locationPin
+        })
+      })
+    }
+
   render() {
     return (
       <div className="App">

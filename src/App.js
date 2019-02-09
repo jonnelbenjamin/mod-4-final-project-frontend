@@ -28,11 +28,10 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar />
-        <header className="App-header">
+
           <WorldMap />
-            <p>Here is paragraph in the App</p>
-            <Button bsstyle='success'>Hello Button</Button>
-        </header>
+            
+
       </div>
     );
   }

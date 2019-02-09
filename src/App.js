@@ -29,8 +29,10 @@ class App extends Component {
       <div className="App">
         <NavBar />
 
-          <WorldMap />
-            
+          <WorldMap
+            allLocations={this.state.locationPin}
+             />
+
 
       </div>
     );

@@ -19,8 +19,8 @@ class App extends Component {
         <NavBar />
         <header className="App-header">
           <WorldMap />
-            <p>Here is a paragraph in the App</p>
-            <Button bsStyle='success'>Hello Button</Button>
+            <p>Here is paragraph in the App</p>
+            <Button bsstyle='success'>Hello Button</Button>
         </header>
       </div>
     );

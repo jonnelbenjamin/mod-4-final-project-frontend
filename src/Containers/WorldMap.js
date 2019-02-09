@@ -7,7 +7,14 @@ class WorldMap extends Component {
     return (
       <div className="WorldMap">
         <header className="WorldMap-header">
-          <LocationPin />
+          {this.props.allLocations.map(location =>
+            <LocationPin
+              location={location}
+              pinClickHandler={this.props.pinClickHandler}
+              />
+
+          )
+        }
         </header>
       </div>
     );

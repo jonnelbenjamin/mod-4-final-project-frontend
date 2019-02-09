@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import pin from '../LocationPins.png'
 
 class LocationPin extends Component {
   render() {
     return (
-      <div>
-      <h1>Hello world</h1>
+      <div className="Pin">
+      <img src={pin}
+        onClick={this.props.pinClickHandler}
+       />
       </div>
   )
   }

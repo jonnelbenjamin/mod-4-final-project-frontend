@@ -24,6 +24,12 @@ class App extends Component {
       })
     }
 
+  pinClickHandler(){
+
+    console.log('location pin hit')
+    
+  }
+
   render() {
     return (
       <div className="App">
@@ -31,6 +37,7 @@ class App extends Component {
 
           <WorldMap
             allLocations={this.state.locationPin}
+            pinClickHandler={this.pinClickHandler}
              />
 
 

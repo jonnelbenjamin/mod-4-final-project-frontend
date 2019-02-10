@@ -25,11 +25,11 @@ class App extends Component {
       })
     }
 
-    pinClickHandler(pinObj){
-      console.log(pinObj.id)
+    onClickHandler = (pinObj) => {
       this.setState({
-        locationDetail: pinObj
+        locationDetail: [pinObj]
       })
+      console.log(pinObj.name)
     }
 
   render() {
@@ -39,7 +39,7 @@ class App extends Component {
 
           <WorldMap
             allLocations={this.state.locationPin}
-            pinClickHandler={this.pinClickHandler}
+            pinClickHandler={this.onClickHandler}
             locationDetail={this.state.locationDetail}
              />
 

@@ -36,3 +36,37 @@
   background: url('https://s3.thingpic.com/images/dS/TmSj2SaFrUim3X5WWTK4oamP.jpeg');
   background-size:cover;
 }
+
+#Pin-1{
+transform: translate(-1310px, 430px);
+}
+#Pin-2{
+transform: translate(55px, 100px);
+}
+#Pin-3{
+transform: translate(-1990px, 230px);
+}
+#Pin-4{
+transform: translate(-100px, -100px);
+}
+#Pin-5{
+transform: translate(110px, -110px);
+}
+#Pin-6{
+transform: translate(2040px, -60px);
+}
+#Pin-7{
+transform: translate(410px, -60px);
+}
+#Pin-8{
+transform: translate(470px, -630px);
+}
+#Pin-9{
+transform: translate(-160px, -380px);
+}
+#Pin-10{
+transform: translate(1610px, 290px);
+}
+#Pin-11{
+transform: translate(-1355px, 230px);
+}

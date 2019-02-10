@@ -27,7 +27,7 @@ class App extends Component {
   pinClickHandler(){
 
     console.log('location pin hit')
-    
+
   }
 
   render() {

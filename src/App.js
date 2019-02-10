@@ -10,7 +10,8 @@ class App extends Component {
     super()
     this.state = {
       locationPin: [],
-      missions: []
+      missions: [],
+      locationDetail: []
     }
   }
 
@@ -24,11 +25,12 @@ class App extends Component {
       })
     }
 
-  pinClickHandler(){
-
-    console.log('location pin hit')
-
-  }
+    pinClickHandler(pinObj){
+      console.log(pinObj.id)
+      this.setState({
+        locationDetail: pinObj
+      })
+    }
 
   render() {
     return (
@@ -38,6 +40,7 @@ class App extends Component {
           <WorldMap
             allLocations={this.state.locationPin}
             pinClickHandler={this.pinClickHandler}
+            locationDetail={this.state.locationDetail}
              />
 
 

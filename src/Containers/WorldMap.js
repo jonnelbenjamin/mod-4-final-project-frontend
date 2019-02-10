@@ -3,6 +3,8 @@ import LocationDetail from '../Components/LocationDetail.js'
 import LocationPin from '../Components/LocationPin.js'
 
 class WorldMap extends Component {
+
+
   render() {
     return (
       <div className="WorldMap">
@@ -12,10 +14,10 @@ class WorldMap extends Component {
               location={location}
               pinClickHandler={this.props.pinClickHandler}
               />
-
           )
         }
         </header>
+        <LocationDetail />
       </div>
     );
   }

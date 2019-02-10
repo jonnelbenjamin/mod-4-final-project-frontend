@@ -74,3 +74,7 @@ transform: translate(1610px, 290px);
 #Pin-11{
 transform: translate(-1355px, 230px);
 }
+
+#instructionsButton{
+  margin-left: 4800px;
+}

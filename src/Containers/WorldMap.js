@@ -17,7 +17,12 @@ class WorldMap extends Component {
           )
         }
         </header>
-        <LocationDetail />
+
+        {this.props.locationDetail.length > 0 ? this.props.locationDetail.map(location =>
+        <LocationDetail
+          location={location}
+          pinClickHandler={this.props.pinClickHandler}
+           />): null}
       </div>
     );
   }

@@ -10,8 +10,8 @@ class NavBar extends Component {
       <div className="nav">
         <Navbar fixed="top" bg="secondary" variant="dark">
           <Navbar.Brand href="">Welcome Spy</Navbar.Brand>
-          <Button fixed="right">Your Missions</Button>
-            <Button bsstyle='success'>How to Play</Button>
+          <Button id="missionButton" fixed="right">Your Missions</Button>
+            <Button id="instructionsButton" bsstyle='success'>How to Play</Button>
         </Navbar>
 
 </div>

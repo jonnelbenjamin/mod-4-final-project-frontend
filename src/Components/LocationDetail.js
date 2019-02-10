@@ -10,8 +10,8 @@ const LocationDetail = props => {
       key={location.id}
       >
         <header className="LocationDetail-header">
-            <h2>"I'm the LocationDetail"</h2>
-            <p>Name: {location.name}</p>
+            <h2>Name: {location.name}</h2>
+            <p>Description: {location.city_information}</p>
             </header>
             <Leader />
             </div>

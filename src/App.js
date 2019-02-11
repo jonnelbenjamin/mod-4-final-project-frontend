@@ -13,7 +13,8 @@ class App extends Component {
       locationPin: [],
       missions: [],
       locationDetail: [],
-      show: true
+      show: true,
+      Spy: []
     }
   }
 
@@ -23,6 +24,13 @@ class App extends Component {
       .then(locationPin => {
         this.setState({
           locationPin
+        })
+      })
+      fetch('http://localhost:3000/spies')
+      .then(res => res.json())
+      .then(Spy => {
+        this.setState({
+          Spy
         })
       })
     }
@@ -44,12 +52,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar />
+        <NavBar
+          spy={this.state.Spy}
+          />
 
           <WorldMap
             allLocations={this.state.locationPin}
             pinClickHandler={this.onClickHandler}
             locationDetail={this.state.locationDetail}
+            spy={this.state.Spy}
              />
            <input type="button"
              onClick={this.showModal}

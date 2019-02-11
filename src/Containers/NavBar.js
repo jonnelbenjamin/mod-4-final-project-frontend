@@ -6,22 +6,7 @@ import Button from 'react-bootstrap/Button'
 
 class NavBar extends Component {
 
-  constructor(){
-    super()
-    this.state = {
-      Spy: []
-    }
-  }
 
-  componentDidMount(){
-    fetch('http://localhost:3000/spies')
-    .then(res => res.json())
-    .then(Spy => {
-      this.setState({
-          Spy
-      })
-    })
-  }
 
   render() {
     return (
@@ -29,9 +14,9 @@ class NavBar extends Component {
         <Navbar fixed="top" bg="secondary" variant="dark">
           <Navbar.Brand href="">Welcome Spy</Navbar.Brand>
           <Button id="missionButton" fixed="right">Your Missions</Button>
-          {this.state.Spy.length > 0 ?
+          {this.props.spy.length > 0 ?
           <Spy
-            spy={this.state.Spy}
+            spy={this.props.spy}
             />: null}
             <Button id="instructionsButton" bsstyle='success'>How to Play</Button>
         </Navbar>

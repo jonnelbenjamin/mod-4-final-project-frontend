@@ -16,7 +16,8 @@ this.state = {
 handleLeader = (leader) => {
   console.log('hit the leader', leader)
   this.setState({
-    leader
+    leader: [leader],
+    battle: [leader]
   })
 
 }
@@ -40,10 +41,11 @@ handleLeader = (leader) => {
           location={location}
           handleLeader={this.handleLeader}
           leader={this.state.leader}
+          spy={this.props.spy}
            />): null}
-           {this.state.leader.name ?
+           {this.state.leader[0] ?
              <Leader
-               leader={this.state.leader}
+               leader={this.state.leader[0]}
                /> : null}
       </div>
     );

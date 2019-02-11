@@ -17,7 +17,7 @@ handleLeader = (leader) => {
   console.log('hit the leader', leader)
   this.setState({
     leader: [leader],
-    battle: [leader]
+    battle: [...this.props.spy,leader]
   })
 
 }

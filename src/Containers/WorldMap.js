@@ -1,9 +1,24 @@
 import React, { Component } from 'react';
 import LocationDetail from '../Components/LocationDetail.js'
 import LocationPin from '../Components/LocationPin.js'
+import Leader from '../Components/Leader.js'
 
 class WorldMap extends Component {
 
+constructor(){
+super()
+this.state = {
+  leader: []
+}
+}
+
+handleLeader = (leader) => {
+  console.log('hit the leader', leader)
+  this.setState({
+    leader
+  })
+  
+}
 
   render() {
     return (
@@ -21,7 +36,13 @@ class WorldMap extends Component {
         {this.props.locationDetail.length > 0 ? this.props.locationDetail.map(location =>
         <LocationDetail
           location={location}
+          handleLeader={this.handleLeader}
+          leader={this.state.leader}
            />): null}
+           {this.state.leader ?
+             <Leader
+               leader={this.state.leader}
+               /> : null}
       </div>
     );
   }

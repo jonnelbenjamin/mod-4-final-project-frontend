@@ -4,6 +4,7 @@ import './App.css';
 import WorldMap from './Containers/WorldMap'
 import NavBar from './Containers/NavBar'
 import { Button} from 'react-bootstrap';
+import Modal from './Modal/Modal.js'
 
 class App extends Component {
   constructor(){
@@ -11,7 +12,8 @@ class App extends Component {
     this.state = {
       locationPin: [],
       missions: [],
-      locationDetail: []
+      locationDetail: [],
+      show: true
     }
   }
 
@@ -32,6 +34,13 @@ class App extends Component {
       console.log(pinObj.name)
     }
 
+    showModal = () => {
+      this.setState({
+        ...this.state,
+        show: !this.state.show
+      })
+    }
+
   render() {
     return (
       <div className="App">
@@ -42,7 +51,14 @@ class App extends Component {
             pinClickHandler={this.onClickHandler}
             locationDetail={this.state.locationDetail}
              />
-
+           <input type="button"
+             onClick={this.showModal}
+             value="Show Modal" />
+           <Modal
+             onClose={this.showModal}
+             show={this.state.show}>
+             This message is from Modal!
+           </Modal>
 
       </div>
     );

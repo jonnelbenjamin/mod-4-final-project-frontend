@@ -26,7 +26,6 @@ class App extends Component {
     }
 
     onClickHandler = (pinObj) => {
-      // document.querySelector('.LocationDetail-header').remove()
       this.setState({
         locationDetail: [pinObj]
       })

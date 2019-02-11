@@ -2,16 +2,21 @@ import React, { Component } from 'react';
 import Mission from './Mission.js'
 
 
-class Spy extends Component {
-  render() {
+const Spy = props => {
+
     return (
       <div className="Spy">
         <header className="Spy-header">
-            <h1>"I'm the spy"</h1>
+            <span>Your Stats - </span>
+            <span>Attack:{props.spy[0].attack}</span>
+            <span>Defense:{props.spy[0].defense}</span>
+            <span>HP:{props.spy[0].health_points}</span>
+
+
             </header>
             </div>
           )
         }
-      }
+
 
 export default Spy;

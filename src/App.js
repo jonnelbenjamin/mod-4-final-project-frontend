@@ -4,7 +4,7 @@ import './App.css';
 import WorldMap from './Containers/WorldMap'
 import NavBar from './Containers/NavBar'
 import { Button} from 'react-bootstrap';
-import Modal from './Modal/Modal.js'
+import Battle from './Components/Battle.js'
 
 class App extends Component {
   constructor(){
@@ -61,15 +61,15 @@ class App extends Component {
             pinClickHandler={this.onClickHandler}
             locationDetail={this.state.locationDetail}
             spy={this.state.Spy}
+            onClick={this.showModal}
              />
            <input type="button"
-             onClick={this.showModal}
              value="Show Modal" />
-           <Modal
+           <Battle
              onClose={this.showModal}
              show={this.state.show}>
-             This message is from Modal!
-           </Modal>
+             This message is from Battle!
+           </Battle>
 
       </div>
     );

@@ -42,10 +42,12 @@ handleLeader = (leader) => {
           handleLeader={this.handleLeader}
           leader={this.state.leader}
           spy={this.props.spy}
+          onClick={this.props.onClick}
            />): null}
            {this.state.leader[0] ?
              <Leader
                leader={this.state.leader[0]}
+               onClick={this.props.onClick}
                /> : null}
       </div>
     );

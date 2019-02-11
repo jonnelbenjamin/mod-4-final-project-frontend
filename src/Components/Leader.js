@@ -6,11 +6,8 @@ import Spy from './Spy'
 
 class Leader extends Component {
 
-  handleBattleClick = (leaderObj) => {
-    console.log('start the battle with the leaderObj', leaderObj)
-    this.setState({
-      battle: [...leaderObj]
-    })
+  handleBattleClick = () => {
+    console.log('hit the battle button')
   }
   render() {
     return (
@@ -23,7 +20,7 @@ class Leader extends Component {
             <span>Defense: {this.props.leader.defense} </span>
             <span>HP: {this.props.leader.health_points} </span>
             <Button
-            onClick={() => this.handleBattleClick(this.props.leader)}
+            onClick={this.props.onClick}
             id="battleButton" fixed="right">Battle!</Button>
             </header>
             </div>

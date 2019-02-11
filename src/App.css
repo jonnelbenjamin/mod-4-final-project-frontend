@@ -78,3 +78,7 @@ transform: translate(-1355px, 230px);
 #instructionsButton{
   margin-left: 4000px;
 }
+
+.battleBox{
+  transform: translate(0px, 180px);
+}

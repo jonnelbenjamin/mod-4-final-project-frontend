@@ -17,7 +17,7 @@ handleLeader = (leader) => {
   this.setState({
     leader
   })
-  
+
 }
 
   render() {
@@ -39,7 +39,7 @@ handleLeader = (leader) => {
           handleLeader={this.handleLeader}
           leader={this.state.leader}
            />): null}
-           {this.state.leader ?
+           {this.state.leader.name ?
              <Leader
                leader={this.state.leader}
                /> : null}

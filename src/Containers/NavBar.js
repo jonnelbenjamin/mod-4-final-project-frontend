@@ -11,6 +11,7 @@ class NavBar extends Component {
         <Navbar fixed="top" bg="secondary" variant="dark">
           <Navbar.Brand href="">Welcome Spy</Navbar.Brand>
           <Button id="missionButton" fixed="right">Your Missions</Button>
+          <Spy />
             <Button id="instructionsButton" bsstyle='success'>How to Play</Button>
         </Navbar>
 

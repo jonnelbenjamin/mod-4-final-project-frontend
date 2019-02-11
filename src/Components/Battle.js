@@ -37,13 +37,13 @@ export default class Battle extends React.Component {
     return (
       <div style={backdropStyle} className="battleBox">
       <div style={modalStyle}>
-      <h1>This is the battle arena</h1>
+      <h1>{this.props.battle}</h1>
 
       <div style={footerStyle}>
         <button
         onClick={(e) => {this.onClose(e)}}
         >
-        Close
+        Run Away!
         </button>
       </div>
       </div>

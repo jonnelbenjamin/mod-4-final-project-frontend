@@ -48,6 +48,7 @@ handleLeader = (leader) => {
              <Leader
                leader={this.state.leader[0]}
                onClick={this.props.onClick}
+               battle={this.state.battle}
                /> : null}
       </div>
     );

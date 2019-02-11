@@ -8,9 +8,9 @@ const Spy = props => {
       <div className="Spy">
         <header className="Spy-header">
             <span>Your Stats - </span>
-            <span>Attack:{props.spy[0].attack}</span>
-            <span>Defense:{props.spy[0].defense}</span>
-            <span>HP:{props.spy[0].health_points}</span>
+            <span>Attack:{props.spy[0].attack}  </span>
+            <span>Defense:{props.spy[0].defense}  </span>
+            <span>HP:{props.spy[0].health_points}  </span>
 
 
             </header>

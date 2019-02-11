@@ -8,7 +8,8 @@ class WorldMap extends Component {
 constructor(){
 super()
 this.state = {
-  leader: []
+  leader: [],
+  battle: []
 }
 }
 
@@ -35,6 +36,7 @@ handleLeader = (leader) => {
 
         {this.props.locationDetail.length > 0 ? this.props.locationDetail.map(location =>
         <LocationDetail
+          battle={this.state.battle}
           location={location}
           handleLeader={this.handleLeader}
           leader={this.state.leader}

@@ -42,12 +42,23 @@ export default class Battle extends React.Component {
     })
     console.log('engaging in battle', spyObj, leaderObj)
     if(spyObj.attack > leaderObj.defense){
-      leaderObj.health_points = leaderObj.health_points -2
-      this.setState({
-        leaderHealth: leaderObj.health_points
-      })
-    }
-  }
+      let hurtLeaderDifference = spyObj.attack - leaderObj.defense
+      hurtLeaderDifference = hurtLeaderDifference * Math.floor(Math.random() * Math.floor(4))
+      leaderObj.health_points = leaderObj.health_points - hurtLeaderDifference
+      if(leaderObj.attack > spyObj.defense){
+      let hurtSpyDifference = leaderObj.attack - spyObj.defense
+      hurtSpyDifference = hurtSpyDifference * Math.floor(Math.random() * Math.floor(4))
+      spyObj.health_points = spyObj.health_points - hurtSpyDifference}
+      else {
+      let hurtSpyDifference =  spyObj.defense - leaderObj.attack
+      hurtSpyDifference = hurtSpyDifference * Math.ceil(Math.random() * Math.ceil(3))
+      spyObj.health_points = spyObj.health_points - hurtSpyDifference}
+    this.setState({
+      leaderHealth: leaderObj.health_points,
+      spyHealth: spyObj.health_points
+    })
+  } //closes the if statement on line 44
+} //closes the engage function on line 38
   onClose = (e) => {
     this.props.onClose && this.props.onClose(e);
   }

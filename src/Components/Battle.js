@@ -59,7 +59,7 @@ class Battle extends React.Component {
       else if (leaderObj.health_points < 1 || this.props.battle[1].health_points < 1){
         alert('Bro! You live here!')
         this.setState({
-          leaderHealth: []
+          spyHealth: []
         })
       }
       else if (spyObj.health_points < 1 || this.props.battle[0].health_points < 1){
@@ -81,7 +81,7 @@ class Battle extends React.Component {
     if (leaderObj.health_points < 1 || this.props.battle[1].health_points < 1){
       alert('Bro! You live here!')
       this.setState({
-        leaderHealth: []
+        spyHealth: [spyObj.health_points = 150]
       })
     }
     else if (spyObj.health_points < 1 || this.props.battle[0].health_points < 1){
@@ -92,7 +92,7 @@ class Battle extends React.Component {
       else if (leaderObj.health_points < 1 || this.props.battle[1].health_points < 1){
         alert('Bro! You live here!')
         this.setState({
-          leaderHealth: []
+          spyHealth: [spyObj.health_points = 150]
         })
       }
     else {
@@ -115,7 +115,7 @@ class Battle extends React.Component {
       else if (leaderObj.health_points < 1 || this.props.battle[1].health_points < 1){
         alert('Bro! You live here!')
         this.setState({
-          leaderHealth: []
+          spyHealth: [spyObj.health_points = 150]
         })
       }
       else if (spyObj.health_points < 1 || this.props.battle[0].health_points < 1){

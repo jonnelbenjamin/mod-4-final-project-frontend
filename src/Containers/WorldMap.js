@@ -5,22 +5,7 @@ import Leader from '../Components/Leader.js'
 
 class WorldMap extends Component {
 
-constructor(){
-super()
-this.state = {
-  leader: [],
-  battle: []
-}
-}
 
-handleLeader = (leader) => {
-  console.log('hit the leader', leader)
-  this.setState({
-    leader: [leader],
-    battle: [...this.props.spy,leader]
-  })
-
-}
 
   render() {
     return (
@@ -37,18 +22,18 @@ handleLeader = (leader) => {
 
         {this.props.locationDetail.length > 0 ? this.props.locationDetail.map(location =>
         <LocationDetail
-          battle={this.state.battle}
+          battle={this.props.battle}
           location={location}
-          handleLeader={this.handleLeader}
-          leader={this.state.leader}
+          handleLeader={this.props.handleLeader}
+          leader={this.props.leader}
           spy={this.props.spy}
           onClick={this.props.onClick}
            />): null}
-           {this.state.leader[0] ?
+           {this.props.leader[0] ?
              <Leader
-               leader={this.state.leader[0]}
+               leader={this.props.leader[0]}
                onClick={this.props.onClick}
-               battle={this.state.battle}
+               battle={this.props.battle}
                /> : null}
       </div>
     );

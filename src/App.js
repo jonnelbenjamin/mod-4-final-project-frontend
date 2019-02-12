@@ -14,7 +14,9 @@ class App extends Component {
       missions: [],
       locationDetail: [],
       show: true,
-      Spy: []
+      Spy: [],
+      battle: [],
+      leader: []
     }
   }
 
@@ -49,6 +51,15 @@ class App extends Component {
       })
     }
 
+    handleLeader = (leader) => {
+      console.log('hit the leader', leader)
+      this.setState({
+        leader: [leader],
+        battle: [...this.state.Spy,leader]
+      })
+
+    }
+
   render() {
     return (
       <div className="App">
@@ -62,10 +73,14 @@ class App extends Component {
             locationDetail={this.state.locationDetail}
             spy={this.state.Spy}
             onClick={this.showModal}
+            battle={this.state.battle}
+            handleLeader={this.handleLeader}
+            leader={this.state.leader}
              />
            <input type="button"
              value="Show Modal" />
            <Battle
+             battle={this.state.battle}
              onClose={this.showModal}
              show={this.state.show}>
              This message is from Battle!

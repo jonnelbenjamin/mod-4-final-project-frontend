@@ -27,6 +27,7 @@ const footerStyle = {
 };
 
 export default class Battle extends React.Component {
+
   onClose = (e) => {
     this.props.onClose && this.props.onClose(e);
   }
@@ -34,19 +35,31 @@ export default class Battle extends React.Component {
     if (this.props.show) {
       return null;
     }
+
     return (
       <div style={backdropStyle} className="battleBox">
       <div style={modalStyle}>
-      <h1>Battle should go in here!</h1>
+      <h1>SPY: {this.props.battle[0].name}</h1>
+      <h1>ATTACK: {this.props.battle[0].attack}</h1>
+      <h1>DEFENSE: {this.props.battle[0].defense}</h1>
+      <h1>HP: {this.props.battle[0].health_points}</h1>
+      <h1>LEADER: {this.props.battle[1].name}</h1>
+      <h1>ATTACK: {this.props.battle[1].attack}</h1>
+      <h1>DEFENSE: {this.props.battle[1].defense}</h1>
+      <h1>HP: {this.props.battle[1].health_points}</h1>
+
+      <br></br>
 
       <div style={footerStyle}>
-        <button
-        onClick={(e) => {this.onClose(e)}}
-        >
-        Run Away!
-        </button>
+      <button>ENGAGE</button>
+
       </div>
       </div>
+      <button
+      onClick={(e) => {this.onClose(e)}}
+      >
+      Run Away!
+      </button>
       </div>
     )
   }

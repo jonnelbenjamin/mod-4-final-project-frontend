@@ -49,6 +49,15 @@ export default class Battle extends React.Component {
       let hurtSpyDifference = leaderObj.attack - spyObj.defense
       hurtSpyDifference = hurtSpyDifference * Math.floor(Math.random() * Math.floor(4))
       spyObj.health_points = spyObj.health_points - hurtSpyDifference}
+      else if (spyObj.defense === leaderObj.attack){
+      let hurtSpyDifference = 0.5
+      hurtSpyDifference = Math.ceil(hurtSpyDifference * Math.ceil(Math.random() * Math.ceil(2)))
+      spyObj.health_points = spyObj.health_points - hurtSpyDifference
+      this.setState({
+      leaderHealth: leaderObj.health_points,
+      spyHealth: spyObj.health_points
+    })
+    }
       else {
       let hurtSpyDifference =  spyObj.defense - leaderObj.attack
       hurtSpyDifference = hurtSpyDifference * Math.ceil(Math.random() * Math.ceil(3))
@@ -57,7 +66,34 @@ export default class Battle extends React.Component {
       leaderHealth: leaderObj.health_points,
       spyHealth: spyObj.health_points
     })
-  } //closes the if statement on line 44
+    } //closes the if statement on line 44
+
+    else {
+      let hurtLeaderDifference = leaderObj.defense - spyObj.attack
+      hurtLeaderDifference = hurtLeaderDifference * Math.floor(Math.random() * Math.floor(2))
+      leaderObj.health_points = leaderObj.health_points - hurtLeaderDifference
+      if(leaderObj.attack > spyObj.defense){
+      let hurtSpyDifference = leaderObj.attack - spyObj.defense
+      hurtSpyDifference = hurtSpyDifference * Math.floor(Math.random() * Math.floor(4))
+      spyObj.health_points = spyObj.health_points - hurtSpyDifference}
+      else if (spyObj.defense === leaderObj.attack){
+      let hurtSpyDifference = 0.5
+      hurtSpyDifference = Math.ceil(hurtSpyDifference * Math.ceil(Math.random() * Math.ceil(2)))
+      spyObj.health_points = spyObj.health_points - hurtSpyDifference
+      this.setState({
+      leaderHealth: leaderObj.health_points,
+      spyHealth: spyObj.health_points
+    })
+    }
+      else {
+      let hurtSpyDifference =  spyObj.defense - leaderObj.attack
+      hurtSpyDifference = hurtSpyDifference * Math.ceil(Math.random() * Math.ceil(3))
+      spyObj.health_points = spyObj.health_points - hurtSpyDifference
+      this.setState({
+      leaderHealth: leaderObj.health_points,
+      spyHealth: spyObj.health_points
+    })}
+    }
 } //closes the engage function on line 38
   onClose = (e) => {
     this.props.onClose && this.props.onClose(e);

@@ -60,8 +60,12 @@ export default class Battle extends React.Component {
     }
       else {
       let hurtSpyDifference =  spyObj.defense - leaderObj.attack
-      hurtSpyDifference = hurtSpyDifference * Math.ceil(Math.random() * Math.ceil(3))
-      spyObj.health_points = spyObj.health_points - hurtSpyDifference}
+      hurtSpyDifference = hurtSpyDifference * Math.ceil(Math.random() * Math.ceil(1))
+      spyObj.health_points = spyObj.health_points - hurtSpyDifference
+      let hurtLeaderDifference = leaderObj.defense - spyObj.attack
+      hurtLeaderDifference = hurtLeaderDifference * Math.floor(Math.random() * Math.floor(2))
+      leaderObj.health_points = leaderObj.health_points - hurtLeaderDifference
+    }
     this.setState({
       leaderHealth: leaderObj.health_points,
       spyHealth: spyObj.health_points
@@ -70,11 +74,11 @@ export default class Battle extends React.Component {
 
     else {
       let hurtLeaderDifference = leaderObj.defense - spyObj.attack
-      hurtLeaderDifference = hurtLeaderDifference * Math.floor(Math.random() * Math.floor(2))
+      hurtLeaderDifference = hurtLeaderDifference + 1 * Math.ceil(Math.random() * Math.ceil(2))
       leaderObj.health_points = leaderObj.health_points - hurtLeaderDifference
       if(leaderObj.attack > spyObj.defense){
       let hurtSpyDifference = leaderObj.attack - spyObj.defense
-      hurtSpyDifference = hurtSpyDifference * Math.floor(Math.random() * Math.floor(4))
+      hurtSpyDifference = hurtSpyDifference * Math.ceil(Math.random() * Math.ceil(3))
       spyObj.health_points = spyObj.health_points - hurtSpyDifference}
       else if (spyObj.defense === leaderObj.attack){
       let hurtSpyDifference = 0.5

@@ -77,8 +77,7 @@ class App extends Component {
             handleLeader={this.handleLeader}
             leader={this.state.leader}
              />
-           <input type="button"
-             value="Show Modal" />
+           
            <Battle
              battle={this.state.battle}
              onClose={this.showModal}

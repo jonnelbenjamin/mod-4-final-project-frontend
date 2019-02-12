@@ -28,6 +28,11 @@ const footerStyle = {
 
 export default class Battle extends React.Component {
 
+
+  engage = (spyObj, leaderObj) => {
+    console.log('engaging in battle', spyObj, leaderObj)
+
+  }
   onClose = (e) => {
     this.props.onClose && this.props.onClose(e);
   }
@@ -43,15 +48,18 @@ export default class Battle extends React.Component {
       <h1>ATTACK: {this.props.battle[0].attack}</h1>
       <h1>DEFENSE: {this.props.battle[0].defense}</h1>
       <h1>HP: {this.props.battle[0].health_points}</h1>
+      <div>
       <h1>LEADER: {this.props.battle[1].name}</h1>
       <h1>ATTACK: {this.props.battle[1].attack}</h1>
       <h1>DEFENSE: {this.props.battle[1].defense}</h1>
       <h1>HP: {this.props.battle[1].health_points}</h1>
-
+      </div>
       <br></br>
 
       <div style={footerStyle}>
-      <button>ENGAGE</button>
+      <button
+      onClick={() => this.engage(this.props.battle[0],this.props.battle[1])}
+      >ENGAGE</button>
 
       </div>
       </div>

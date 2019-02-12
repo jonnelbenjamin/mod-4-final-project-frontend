@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {withRouter} from 'react-router-dom'
 
 const backdropStyle = {
   position: 'fixed',
@@ -27,7 +28,7 @@ const footerStyle = {
   bottom: 20
 };
 
-export default class Battle extends React.Component {
+class Battle extends React.Component {
 
   constructor(){
     super()
@@ -63,7 +64,7 @@ export default class Battle extends React.Component {
       }
       else if (spyObj.health_points < 1 || this.props.battle[0].health_points < 1){
         alert('Membership cancelled :(')
-        window.history.pushState(null, '', '/')
+        this.props.history.push("/")
       }
       else {
       let hurtSpyDifference =  spyObj.defense - leaderObj.attack
@@ -85,7 +86,7 @@ export default class Battle extends React.Component {
     }
     else if (spyObj.health_points < 1 || this.props.battle[0].health_points < 1){
       alert('Membership cancelled :(')
-      window.history.pushState(null, '', '/')
+      this.props.history.push("/")
     }
     } //closes the if statement on line 44
       else if (leaderObj.health_points < 1 || this.props.battle[1].health_points < 1){
@@ -119,7 +120,7 @@ export default class Battle extends React.Component {
       }
       else if (spyObj.health_points < 1 || this.props.battle[0].health_points < 1){
         alert('Membership cancelled :(')
-        window.history.pushState(null, '', '/')
+        this.props.history.push("/")
       }
 
       else {
@@ -174,6 +175,8 @@ export default class Battle extends React.Component {
     )
   }
 }
+
+export default withRouter(Battle);
 
 Battle.propTypes = {
   onClose: PropTypes.func.isRequired

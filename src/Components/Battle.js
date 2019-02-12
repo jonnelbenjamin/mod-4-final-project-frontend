@@ -82,7 +82,7 @@ class Battle extends React.Component {
     if (leaderObj.health_points < 1 || this.props.battle[1].health_points < 1){
       alert('Bro! You live here!')
       this.setState({
-        spyHealth: [spyObj.health_points = 150]
+        spyHealth: [spyObj.health_points = 125]
       })
     }
     else if (spyObj.health_points < 1 || this.props.battle[0].health_points < 1){
@@ -91,12 +91,35 @@ class Battle extends React.Component {
       alert('Please refresh the page!')
     }
     } //closes the if statement on line 44
-      else if (leaderObj.health_points < 1 || this.props.battle[1].health_points < 1){
+    else if (leaderObj.health_points < 1 || this.props.battle[1].health_points < 1){
+      alert('Bro! You live here!')
+      this.setState({
+        spyHealth: [spyObj.health_points = 125]
+      })
+    }
+    else if(spyObj.attack < leaderObj.defense){
+      let hurtLeaderDifference = leaderObj.defense - spyObj.attack
+      hurtLeaderDifference = hurtLeaderDifference * Math.ceil(Math.random() * Math.ceil(2))
+      leaderObj.health_points = leaderObj.health_points - hurtLeaderDifference
+      let hurtSpyDifference = Math.abs(leaderObj.attack - spyObj.defense)
+      hurtSpyDifference = hurtSpyDifference * Math.ceil(Math.random() * Math.ceil(6))
+      spyObj.health_points = spyObj.health_points - hurtSpyDifference
+      this.setState({
+        leaderHealth: leaderObj.health_points,
+        spyHealth: spyObj.health_points
+      })
+      if (leaderObj.health_points < 1 || this.props.battle[1].health_points < 1){
         alert('Bro! You live here!')
         this.setState({
-          spyHealth: [spyObj.health_points = 150]
+          spyHealth: [spyObj.health_points = 125]
         })
       }
+      else if (spyObj.health_points < 1 || this.props.battle[0].health_points < 1){
+        alert('Membership cancelled :(')
+        this.props.history.push("/")
+        alert('Please refresh the page!')
+      }
+    }
     else {
       let hurtLeaderDifference = leaderObj.defense - spyObj.attack
       hurtLeaderDifference = hurtLeaderDifference + 1 * Math.ceil(Math.random() * Math.ceil(2))
@@ -117,7 +140,7 @@ class Battle extends React.Component {
       else if (leaderObj.health_points < 1 || this.props.battle[1].health_points < 1){
         alert('Bro! You live here!')
         this.setState({
-          spyHealth: [spyObj.health_points = 150]
+          spyHealth: [spyObj.health_points = 125]
         })
       }
       else if (spyObj.health_points < 1 || this.props.battle[0].health_points < 1){

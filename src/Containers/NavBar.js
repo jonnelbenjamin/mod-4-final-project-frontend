@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Spy from '../Components/Spy.js'
 import Navbar from 'react-bootstrap/Navbar'
 import Button from 'react-bootstrap/Button'
+import {Link} from 'react-router-dom'
 
 
 class NavBar extends Component {
@@ -17,10 +18,9 @@ class NavBar extends Component {
           <Spy
             spy={this.props.spy}
             />: null}
-            <Button id="missionsButton" fixed="right">Your Missions</Button>
-            <Button
-              onClick={this.props.instructions}
-              id="instructionsButton" bsstyle='success'>How to Play</Button>
+            <Link to="/missions"><Button id="missionsButton" fixed="right">Your Missions</Button></Link>
+            <Link to="/howtoplay"><Button
+              id="instructionsButton" bsstyle='success'>How to Play</Button></Link>
         </Navbar>
 
 </div>

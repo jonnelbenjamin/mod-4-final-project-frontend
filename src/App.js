@@ -6,7 +6,8 @@ import NavBar from './Containers/NavBar'
 import { Button} from 'react-bootstrap';
 import Battle from './Components/Battle.js'
 import HowToPlay from './Components/HowToPlay.js'
-import {Route} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
+import Mission from './Components/Mission.js'
 
 class App extends Component {
   constructor(){
@@ -76,22 +77,31 @@ class App extends Component {
           spy={this.state.Spy}
           />
 
-          <WorldMap
-            allLocations={this.state.locationPin}
-            pinClickHandler={this.onClickHandler}
-            locationDetail={this.state.locationDetail}
-            spy={this.state.Spy}
-            onClick={this.showModal}
-            battle={this.state.battle}
-            handleLeader={this.handleLeader}
-            leader={this.state.leader}
-             />
+
            <Battle
              battle={this.state.battle}
              onClose={this.showModal}
              show={this.state.show}>
            </Battle>
-           <Route />
+           <Switch>
+           <Route path="/worldmap" render={ () => {
+               return (
+                 <WorldMap
+                   allLocations={this.state.locationPin}
+                   pinClickHandler={this.onClickHandler}
+                   locationDetail={this.state.locationDetail}
+                   spy={this.state.Spy}
+                   onClick={this.showModal}
+                   battle={this.state.battle}
+                   handleLeader={this.handleLeader}
+                   leader={this.state.leader}
+                   />
+               )
+             }
+             }/>
+           <Route path="/missions" component={Mission}/>
+             <Route component={HowToPlay}/>
+             </Switch>
       </div>
     );
   }

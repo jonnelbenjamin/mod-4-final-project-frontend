@@ -5,6 +5,7 @@ import WorldMap from './Containers/WorldMap'
 import NavBar from './Containers/NavBar'
 import { Button} from 'react-bootstrap';
 import Battle from './Components/Battle.js'
+import HowToPlay from './Components/HowToPlay.js'
 
 class App extends Component {
   constructor(){
@@ -84,14 +85,13 @@ class App extends Component {
             handleLeader={this.handleLeader}
             leader={this.state.leader}
              />
-
            <Battle
              battle={this.state.battle}
              onClose={this.showModal}
              show={this.state.show}>
              This message is from Battle!
            </Battle>
-
+           
       </div>
     );
   }

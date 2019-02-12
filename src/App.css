@@ -81,5 +81,16 @@ transform: translate(-1355px, 230px);
 
 .battleBox{
   transform: translate(0px, 180px);
+}
 
+div {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: 600;
+  font-size: 45px;
+}
+
+#text {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: 600;
+  font-size: 45px;
 }

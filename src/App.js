@@ -51,19 +51,26 @@ class App extends Component {
       })
     }
 
+    showHowToPlayModal = () => {
+      this.setState({
+        ...this.state,
+        show: !this.state.show
+      })
+    }
+
     handleLeader = (leader) => {
       console.log('hit the leader', leader)
       this.setState({
         leader: [leader],
         battle: [...this.state.Spy,leader]
       })
-
     }
 
   render() {
     return (
       <div className="App">
         <NavBar
+          instructions={this.showHowToPlayModal}
           spy={this.state.Spy}
           />
 
@@ -77,7 +84,7 @@ class App extends Component {
             handleLeader={this.handleLeader}
             leader={this.state.leader}
              />
-           
+
            <Battle
              battle={this.state.battle}
              onClose={this.showModal}

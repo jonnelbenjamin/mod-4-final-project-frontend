@@ -26,7 +26,7 @@ const footerStyle = {
   bottom: 20
 };
 
-export default class Modal extends React.Component {
+export default class HowToPlay extends React.Component {
   onClose = (e) => {
     this.props.onClose && this.props.onClose(e);
   }
@@ -37,6 +37,7 @@ export default class Modal extends React.Component {
     return (
       <div style={backdropStyle}>
       <div style={modalStyle}>
+      {this.props.children}
 
       <div style={footerStyle}>
         <button
@@ -51,6 +52,6 @@ export default class Modal extends React.Component {
   }
 }
 
-Modal.propTypes = {
+HowToPlay.propTypes = {
   onClose: PropTypes.func.isRequired
 }

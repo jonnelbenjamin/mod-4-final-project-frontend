@@ -18,7 +18,9 @@ class NavBar extends Component {
           <Spy
             spy={this.props.spy}
             />: null}
-            <Button id="instructionsButton" bsstyle='success'>How to Play</Button>
+            <Button
+              onClick={this.props.instructions}
+              id="instructionsButton" bsstyle='success'>How to Play</Button>
         </Navbar>
 
 </div>

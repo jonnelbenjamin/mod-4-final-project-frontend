@@ -65,6 +65,7 @@ class Battle extends React.Component {
       else if (spyObj.health_points < 1 || this.props.battle[0].health_points < 1){
         alert('Membership cancelled :(')
         this.props.history.push("/")
+        alert('Please refresh the page!')
       }
       else {
       let hurtSpyDifference =  spyObj.defense - leaderObj.attack
@@ -87,6 +88,7 @@ class Battle extends React.Component {
     else if (spyObj.health_points < 1 || this.props.battle[0].health_points < 1){
       alert('Membership cancelled :(')
       this.props.history.push("/")
+      alert('Please refresh the page!')
     }
     } //closes the if statement on line 44
       else if (leaderObj.health_points < 1 || this.props.battle[1].health_points < 1){
@@ -121,6 +123,7 @@ class Battle extends React.Component {
       else if (spyObj.health_points < 1 || this.props.battle[0].health_points < 1){
         alert('Membership cancelled :(')
         this.props.history.push("/")
+        alert('Please refresh the page!')
       }
 
       else {

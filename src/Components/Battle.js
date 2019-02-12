@@ -58,8 +58,11 @@ export default class Battle extends React.Component {
       else if (leaderObj.health_points < 1 || this.props.battle[1].health_points < 1){
         alert('Bro! You live here!')
         this.setState({
-          leaderHealth: []
+          leaderHealth: [spyObj.health_points = 150]
         })
+      }
+      else if (spyObj.health_points < 1 || this.props.battle[0].health_points < 1){
+        alert('Membership cancelled :(')
       }
       else {
       let hurtSpyDifference =  spyObj.defense - leaderObj.attack
@@ -76,18 +79,19 @@ export default class Battle extends React.Component {
     if (leaderObj.health_points < 1 || this.props.battle[1].health_points < 1){
       alert('Bro! You live here!')
       this.setState({
-        leaderHealth: []
+        leaderHealth: [spyObj.health_points = 150]
       })
     }
+    else if (spyObj.health_points < 1 || this.props.battle[0].health_points < 1){
+      alert('Membership cancelled :(')
+    }
     } //closes the if statement on line 44
-
       else if (leaderObj.health_points < 1 || this.props.battle[1].health_points < 1){
         alert('Bro! You live here!')
         this.setState({
-          leaderHealth: []
+          leaderHealth: [spyObj.health_points = 150]
         })
       }
-
     else {
       let hurtLeaderDifference = leaderObj.defense - spyObj.attack
       hurtLeaderDifference = hurtLeaderDifference + 1 * Math.ceil(Math.random() * Math.ceil(2))
@@ -108,8 +112,12 @@ export default class Battle extends React.Component {
       else if (leaderObj.health_points < 1 || this.props.battle[1].health_points < 1){
         alert('Bro! You live here!')
         this.setState({
-          leaderHealth: []
+          leaderHealth: [spyObj.health_points = 150]
         })
+      }
+      else if (spyObj.health_points < 1 || this.props.battle[0].health_points < 1){
+        alert('Membership cancelled :(')
+
       }
 
       else {

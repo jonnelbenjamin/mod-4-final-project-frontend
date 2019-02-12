@@ -6,6 +6,7 @@ import NavBar from './Containers/NavBar'
 import { Button} from 'react-bootstrap';
 import Battle from './Components/Battle.js'
 import HowToPlay from './Components/HowToPlay.js'
+import {Route} from 'react-router-dom'
 
 class App extends Component {
   constructor(){
@@ -89,9 +90,8 @@ class App extends Component {
              battle={this.state.battle}
              onClose={this.showModal}
              show={this.state.show}>
-             This message is from Battle!
            </Battle>
-           
+           <Route />
       </div>
     );
   }

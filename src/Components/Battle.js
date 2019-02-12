@@ -46,7 +46,7 @@ export default class Battle extends React.Component {
       let hurtLeaderDifference = spyObj.attack - leaderObj.defense
       hurtLeaderDifference = hurtLeaderDifference * Math.floor(Math.random() * Math.floor(4))
       leaderObj.health_points = leaderObj.health_points - hurtLeaderDifference
-      if(leaderObj.attack > spyObj.defense){
+      if(leaderObj.attack < spyObj.defense){
       let hurtSpyDifference = leaderObj.attack - spyObj.defense
       hurtSpyDifference = hurtSpyDifference * Math.ceil(Math.random() * Math.ceil(6))
       spyObj.health_points = spyObj.health_points - hurtSpyDifference}
@@ -54,6 +54,12 @@ export default class Battle extends React.Component {
       let hurtSpyDifference = 0.5
       hurtSpyDifference = Math.ceil(hurtSpyDifference * Math.ceil(Math.random() * Math.ceil(2)))
       spyObj.health_points = spyObj.health_points - hurtSpyDifference
+      }
+      else if (leaderObj.health_points < 1 || this.props.battle[1].health_points < 1){
+        alert('Bro! You live here!')
+        this.setState({
+          leaderHealth: []
+        })
       }
       else {
       let hurtSpyDifference =  spyObj.defense - leaderObj.attack
@@ -67,7 +73,20 @@ export default class Battle extends React.Component {
       leaderHealth: leaderObj.health_points,
       spyHealth: spyObj.health_points
     })
+    if (leaderObj.health_points < 1 || this.props.battle[1].health_points < 1){
+      alert('Bro! You live here!')
+      this.setState({
+        leaderHealth: []
+      })
+    }
     } //closes the if statement on line 44
+
+      else if (leaderObj.health_points < 1 || this.props.battle[1].health_points < 1){
+        alert('Bro! You live here!')
+        this.setState({
+          leaderHealth: []
+        })
+      }
 
     else {
       let hurtLeaderDifference = leaderObj.defense - spyObj.attack
@@ -84,8 +103,15 @@ export default class Battle extends React.Component {
       this.setState({
       leaderHealth: leaderObj.health_points,
       spyHealth: spyObj.health_points
-    })
-    }
+        })
+      }
+      else if (leaderObj.health_points < 1 || this.props.battle[1].health_points < 1){
+        alert('Bro! You live here!')
+        this.setState({
+          leaderHealth: []
+        })
+      }
+
       else {
       let hurtSpyDifference =  spyObj.defense - leaderObj.attack
       hurtSpyDifference = hurtSpyDifference * Math.ceil(Math.random() * Math.ceil(3))
@@ -105,6 +131,8 @@ export default class Battle extends React.Component {
     }
 
     return (
+      <div>
+      {this.state.leaderHealth[0] ? null :
       <div style={backdropStyle} className="battleBox">
       <div style={modalStyle}>
       <h1>SPY: {this.props.battle[0].name}</h1>
@@ -131,6 +159,7 @@ export default class Battle extends React.Component {
       >
       Run Away!
       </button>
+      </div>}
       </div>
     )
   }

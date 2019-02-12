@@ -13,8 +13,6 @@ class Leader extends Component {
     return (
       <div className="Leader">
         <header className="Leader-header">
-
-
             <span>CEO: {this.props.leader.name} </span>
             <span>Attack: {this.props.leader.attack} </span>
             <span>Defense: {this.props.leader.defense} </span>

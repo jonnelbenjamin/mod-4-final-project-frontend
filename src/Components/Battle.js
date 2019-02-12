@@ -37,7 +37,7 @@ export default class Battle extends React.Component {
     return (
       <div style={backdropStyle} className="battleBox">
       <div style={modalStyle}>
-      <h1>{this.props.battle}</h1>
+      <h1>Battle should go in here!</h1>
 
       <div style={footerStyle}>
         <button

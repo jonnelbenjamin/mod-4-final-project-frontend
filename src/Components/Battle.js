@@ -28,10 +28,25 @@ const footerStyle = {
 
 export default class Battle extends React.Component {
 
-
+  constructor(){
+    super()
+    this.state = {
+      spyHealth: [],
+      leaderHealth: []
+    }
+  }
   engage = (spyObj, leaderObj) => {
+    this.setState({
+      spyHealth: spyObj.health_points,
+      leaderHealth: leaderObj.health_points
+    })
     console.log('engaging in battle', spyObj, leaderObj)
-
+    if(spyObj.attack > leaderObj.defense){
+      leaderObj.health_points = leaderObj.health_points -2
+      this.setState({
+        leaderHealth: leaderObj.health_points
+      })
+    }
   }
   onClose = (e) => {
     this.props.onClose && this.props.onClose(e);

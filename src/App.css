@@ -114,3 +114,7 @@ div {
     align-items: center;
     height: 180px;
 }
+
+.ui {
+  transform: translate(15px, 180px);
+}

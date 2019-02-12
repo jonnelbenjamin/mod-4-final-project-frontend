@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import Leader from './Leader'
 import Button from 'react-bootstrap/Button'
+import {Modal} from 'semantic-ui-react'
+import LocationPin from './LocationPin.js'
 
 
-const LocationDetail = props => {
-  const { location } = props;
-
+class LocationDetail extends React.Component {
+  render(){
+  const { location } = this.props;
     return (
+      <Modal trigger={<button>Show</button>}>
+      <Modal.Content>
+      <Modal.Description>
       <div className="LocationDetail"
       key={location.id}
       >
@@ -18,13 +23,16 @@ const LocationDetail = props => {
             </header>
             <div>
             <Button id="battleButton" fixed="right"
-            onClick={() => props.handleLeader(location.leader)}
+            onClick={() => this.props.handleLeader(location.leader)}
             >Leader: {location.leader.name}</Button>
 
             </div>
             </div>
+            </Modal.Description>
+            </Modal.Content>
+          </Modal>
           )
 
-      }
+      }}
 
 export default LocationDetail;

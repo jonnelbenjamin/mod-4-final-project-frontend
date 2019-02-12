@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import LocationDetail from '../Components/LocationDetail.js'
 import LocationPin from '../Components/LocationPin.js'
 import Leader from '../Components/Leader.js'
+import {Modal} from 'semantic-ui-react'
+
 
 class WorldMap extends Component {
 

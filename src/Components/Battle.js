@@ -148,7 +148,6 @@ class Battle extends React.Component {
         this.props.history.push("/")
         alert('Please refresh the page!')
       }
-
       else {
       let hurtSpyDifference =  spyObj.defense - leaderObj.attack
       hurtSpyDifference = hurtSpyDifference * Math.ceil(Math.random() * Math.ceil(3))
